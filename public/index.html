@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="data"></div>
+    This is a test
+    <script>
+      fetch("/validateApp/bttvfeb2y")
+        .then((response) => response.json()) // Parse the response as JSON
+        .then((data) => {
+          // Display the data on the page
+          const dataElement = document.getElementById("data");
+          dataElement.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    </script>
+  </body>
+</html>
